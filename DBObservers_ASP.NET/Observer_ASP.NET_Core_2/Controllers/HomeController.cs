@@ -21,10 +21,6 @@ namespace Observer_ASP.NET_Core_2.Controllers
         {
             IQueryable<User> users = db.Users.Include(x => x.Company);
 
-            ViewData["NameSort"] = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
-            ViewData["AgeSort"] = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
-            ViewData["CompSort"] = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
-
             switch (sortOrder)
             {
                 case SortState.NameDesc:
@@ -41,12 +37,17 @@ namespace Observer_ASP.NET_Core_2.Controllers
                     break;
                 case SortState.CompanyDesc:
                     users = users.OrderByDescending(s => s.Company.Name);
-                    break;  
+                    break;
                 default:
                     users = users.OrderBy(s => s.Name);
                     break;
             }
-            return View(await users.AsNoTracking().ToListAsync());
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                Users = await users.AsNoTracking().ToListAsync(),
+                SortViewModel = new SortViewModel(sortOrder)
+            };
+            return View(viewModel);
         }
 
         public IActionResult About()
