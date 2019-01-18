@@ -1,0 +1,11 @@
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\bin\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.deps.json
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\bin\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.runtimeconfig.json
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\bin\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.runtimeconfig.dev.json
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\bin\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.dll
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\bin\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.pdb
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\obj\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.csprojResolveAssemblyReference.cache
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\obj\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.csproj.CoreCompileInputs.cache
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\obj\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.AssemblyInfoInputs.cache
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\obj\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.AssemblyInfo.cs
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\obj\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.dll
+D:\Repositories\DBObservers_ASP.NET\DBObservers_ASP.NET\Observer_ASP.NET_Core_2\obj\Debug\netcoreapp2.0\Observer_ASP.NET_Core_2.pdb
