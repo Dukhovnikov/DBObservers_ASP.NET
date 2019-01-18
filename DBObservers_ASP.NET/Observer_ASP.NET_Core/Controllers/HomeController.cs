@@ -18,11 +18,6 @@ namespace Observer_ASP.NET_Core.Controllers
             _db = context;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         public async Task<IActionResult> Index()
         {
             return View(await _db.Phones.ToListAsync());
@@ -39,6 +34,65 @@ namespace Observer_ASP.NET_Core.Controllers
             _db.Phones.Add(phone);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id != null)
+            {
+                Phone phone = await _db.Phones.FirstOrDefaultAsync(p => p.Id == id);
+                if (phone != null)
+                    return View(phone);
+            }
+            return NotFound();
+        }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id != null)
+            {
+                Phone phone = await _db.Phones.FirstOrDefaultAsync(p => p.Id == id);
+                if (phone != null)
+                    return View(phone);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Phone phone)
+        {
+            _db.Phones.Update(phone);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        [ActionName("Delete")]
+        public async Task<IActionResult> ConfirmDelete(int? id)
+        {
+            if (id != null)
+            {
+                Phone phone = await _db.Phones.FirstOrDefaultAsync(p => p.Id == id);
+                if (phone != null)
+                    return View(phone);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id != null)
+            {
+                Phone phone = await _db.Phones.FirstOrDefaultAsync(p => p.Id == id);
+                if (phone != null)
+                {
+                    _db.Phones.Remove(phone);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+            }
+            return NotFound();
         }
 
         public IActionResult About()
