@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Equipment>
+@{
+    ViewBag.Title = "Все оборудование";
+}
+<a asp-action="Create">Добавить модель</a>
+<table class="table">
+    <tr><td>Модель</td>
+        <td>Максимальная сила давления</td>
+        <td>Максимальная рабочая температура</td>
+        <td>Скорость роста температуры</td>
+        <td>Электропитание</td>
+        <td>Вec</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.MaximumPressureForce</td>
+            <td>@item.MaximumWorkingTemperature</td>
+            <td>@item.TemperatureRiseRate</td>
+            <td>@item.PowerSupply</td>
+            <td>@item.Weight</td>
+        </tr>
+    }
+</table>

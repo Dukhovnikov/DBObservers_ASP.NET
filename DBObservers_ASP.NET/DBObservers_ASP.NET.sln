@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Observer_ASP.NET_Core", "Ob
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer_ASP.NET_Core_2", "Observer_ASP.NET_Core_2\Observer_ASP.NET_Core_2.csproj", "{CFC5D51E-FC67-4427-8C93-C10B8C8493CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer_ASP.NET_Core_Current", "Observer_ASP.NET_Core_Current\Observer_ASP.NET_Core_Current.csproj", "{A103E169-ACDC-40EC-AF2E-FF329CDC5D53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CFC5D51E-FC67-4427-8C93-C10B8C8493CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFC5D51E-FC67-4427-8C93-C10B8C8493CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFC5D51E-FC67-4427-8C93-C10B8C8493CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A103E169-ACDC-40EC-AF2E-FF329CDC5D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A103E169-ACDC-40EC-AF2E-FF329CDC5D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A103E169-ACDC-40EC-AF2E-FF329CDC5D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A103E169-ACDC-40EC-AF2E-FF329CDC5D53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
