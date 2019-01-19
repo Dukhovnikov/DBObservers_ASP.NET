@@ -17,9 +17,40 @@ namespace Observer_ASP.NET_Core_Current.Controllers
             db = context;
         }
 
-        public async Task<IActionResult> Index()
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await db.Equipments.ToListAsync());
+        //}
+        public async Task<IActionResult> Index(SortState sortOrder = SortState.NameAsc)
         {
-            return View(await db.Equipments.ToListAsync());
+            IQueryable<Equipment> users = db.Equipments.Include(x => x.EquipmentType);
+
+            ViewData["NameSort"] = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
+            ViewData["AgeSort"] = sortOrder == SortState.MaximumPressureForceAsc ? SortState.MaximumPressureForceDesc : SortState.MaximumPressureForceAsc;
+            ViewData["CompSort"] = sortOrder == SortState.WeightAsc ? SortState.WeightyDesc : SortState.WeightAsc;
+
+            switch (sortOrder)
+            {
+                case SortState.NameDesc:
+                    users = users.OrderByDescending(s => s.Name);
+                    break;
+                case SortState.MaximumPressureForceAsc:
+                    users = users.OrderBy(s => s.MaximumPressureForce);
+                    break;
+                case SortState.MaximumPressureForceDesc:
+                    users = users.OrderByDescending(s => s.MaximumPressureForce);
+                    break;
+                case SortState.WeightAsc:
+                    users = users.OrderBy(s => s.Weight);
+                    break;
+                case SortState.WeightyDesc:
+                    users = users.OrderByDescending(s => s.Weight);
+                    break;
+                default:
+                    users = users.OrderBy(s => s.Name);
+                    break;
+            }
+            return View(await users.AsNoTracking().ToListAsync());
         }
 
         public IActionResult Create()
@@ -30,7 +61,7 @@ namespace Observer_ASP.NET_Core_Current.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Equipment equipment)
         {
-            equipment.EquipmentType = new EquipmentType() {Name = equipment.EquipmentTypeString};
+            equipment.EquipmentType = new EquipmentType() { Name = equipment.EquipmentTypeString };
             db.Equipments.Add(equipment);
             db.EquipmentTypes.Add(equipment.EquipmentType);
             await db.SaveChangesAsync();

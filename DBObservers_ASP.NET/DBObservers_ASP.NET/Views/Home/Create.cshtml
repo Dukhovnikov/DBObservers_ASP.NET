@@ -1,0 +1,53 @@
+﻿@model Equipment
+@{
+    ViewBag.Title = "Добавление оборудования";
+}
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Название</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="MaximumPressureForce" class="control-label">Максимальная сила давления</label>
+        <input type="number" asp-for="MaximumPressureForce" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="MaximumWorkingTemperature" class="control-label">Максимальная рабочая температура</label>
+        <input type="number" asp-for="MaximumWorkingTemperature" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="TemperatureRiseRate" class="control-label">Скорость роста температуры</label>
+        <input type="number" asp-for="TemperatureRiseRate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PowerSupply" class="control-label">Электропитание</label>
+        <input type="number" asp-for="PowerSupply" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PowerConsumption" class="control-label">Потребляемая мощность</label>
+        <input type="number" asp-for="PowerConsumption" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CompressedAir" class="control-label">Сжатый воздух</label>
+        <input type="number" asp-for="CompressedAir" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AirConsumption" class="control-label">Потребление воздуха</label>
+        <input type="number" asp-for="AirConsumption" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Dimensions" class="control-label">Габариты</label>
+        <input type="text" asp-for="Dimensions" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Weight" class="control-label">Вес</label>
+        <input type="number" asp-for="Weight" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EquipmentTypeString" class="control-label">Вид системы</label>
+        <input type="text" asp-for="EquipmentTypeString" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Send" class="btn btn-default" />
+    </div>
+</form>

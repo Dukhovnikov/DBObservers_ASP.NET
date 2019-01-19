@@ -1,0 +1,24 @@
+﻿@model Equipment
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h2>Модель @Model.Name</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Максимальная сила давления</dt>
+        <dd>@Model.MaximumPressureForce</dd>
+
+        <dt>Максимальная рабочая температура</dt>
+        <dd>@Model.MaximumWorkingTemperature</dd>
+
+        <dt>Скорость роста температуры</dt>
+        <dd>@Model.TemperatureRiseRate</dd>
+
+        <dt>Электропитание</dt>
+        <dd>@Model.PowerSupply</dd>
+
+        <dt>Вec</dt>
+        <dd>@Model.Weight</dd>
+    </dl>
+</div>
