@@ -1,0 +1,36 @@
+﻿@model Observer_ASP.NET_Core_Current.Models.Equipment
+@{
+    ViewBag.Title = "Удаление";
+}
+ 
+<div>
+    <dl class="dl-horizontal">
+        <dt>Модель</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+ 
+        <dt>Максимальная сила давления</dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaximumPressureForce)
+        </dd>
+ 
+        <dt>Максимальная рабочая температура</dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaximumWorkingTemperature)
+        </dd>
+        
+        <dt>Вec</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+    </dl>
+ 
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>

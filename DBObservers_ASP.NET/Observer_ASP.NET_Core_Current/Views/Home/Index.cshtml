@@ -1,26 +1,44 @@
 ﻿@model IEnumerable<Equipment>
 @{
-    ViewBag.Title = "Все оборудование";
+    ViewBag.Title = "Все смартфоны";
 }
-<a asp-action="Create">Добавить модель</a>
-<table class="table">
-    <tr><td>Модель</td>
-        <td>Максимальная сила давления</td>
-        <td>Максимальная рабочая температура</td>
-        <td>Скорость роста температуры</td>
-        <td>Электропитание</td>
-        <td>Вec</td>
-    </tr>
 
+<table class="table">
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.Name</td>
-            <td>@item.MaximumPressureForce</td>
-            <td>@item.MaximumWorkingTemperature</td>
-            <td>@item.TemperatureRiseRate</td>
-            <td>@item.PowerSupply</td>
-            <td>@item.Weight</td>
+            <td>
+                <a asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">Подробнее</a> |
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id">Удалить</a>
+            </td>
         </tr>
     }
 </table>
+
+@*@{
+        ViewBag.Title = "Все оборудование";
+    }
+    <a asp-action="Create">Добавить модель</a>
+    <table class="table">
+        <tr><td>Модель</td>
+            <td>Максимальная сила давления</td>
+            <td>Максимальная рабочая температура</td>
+            <td>Скорость роста температуры</td>
+            <td>Электропитание</td>
+            <td>Вec</td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.MaximumPressureForce</td>
+                <td>@item.MaximumWorkingTemperature</td>
+                <td>@item.TemperatureRiseRate</td>
+                <td>@item.PowerSupply</td>
+                <td>@item.Weight</td>
+            </tr>
+        }
+    </table>*@
